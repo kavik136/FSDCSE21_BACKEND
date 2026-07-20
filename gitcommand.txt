@@ -1,0 +1,8 @@
+day 1:
+1.git status
+2.git init
+3.git add .
+4.git commit -m "msg"
+5.git branch -M main
+git remote add origin repo-link
+git push -u origin main
