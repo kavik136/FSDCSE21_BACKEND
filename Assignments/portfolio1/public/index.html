@@ -1,0 +1,726 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kavi Khare | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf8ff;
+            color: #241b35;
+            line-height: 1.6;
+        }
+
+
+        /* NAVBAR */
+
+        nav {
+            height: 75px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 8%;
+
+            background-color: rgba(255, 255, 255, 0.9);
+
+            border-bottom: 1px solid #eee7fa;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            backdrop-filter: blur(10px);
+        }
+
+        nav h2 {
+            font-size: 27px;
+            color: #6d3fc5;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #554b65;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #7b4bd6;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    #e9dcff,
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    #ddd2ff,
+                    transparent 30%
+                ),
+                #faf8ff;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 68px;
+            margin-bottom: 15px;
+            color: #2d2140;
+        }
+
+        .hero h1 span {
+            color: #7545d2;
+        }
+
+        .hero h3 {
+            font-size: 25px;
+            font-weight: normal;
+            color: #5f5371;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+
+            color: #766b83;
+            font-size: 18px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: linear-gradient(
+                135deg,
+                #7041d4,
+                #9b6bea
+            );
+
+            color: white;
+
+            box-shadow: 0 8px 25px rgba(112, 65, 212, 0.25);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(112, 65, 212, 0.35);
+        }
+
+        .secondary-btn {
+            color: #6d3fc5;
+
+            border: 1px solid #cdb8f2;
+
+            background-color: white;
+        }
+
+        .secondary-btn:hover {
+            background-color: #f2ebff;
+        }
+
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #30233f;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 span {
+            color: #7545d2;
+        }
+
+        .section-title p {
+            color: #81768d;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #665b72;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+
+        /* SKILLS */
+
+        .skills-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            padding: 28px 20px;
+
+            text-align: center;
+
+            background-color: white;
+
+            border: 1px solid #eadff9;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+
+            border-color: #b999ed;
+
+            box-shadow:
+                0 12px 30px rgba(112, 65, 212, 0.12);
+        }
+
+        .skill h3 {
+            color: #39264f;
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #83788e;
+            font-size: 14px;
+        }
+
+
+        /* PROJECTS */
+
+        .projects {
+            background-color: #f3edff;
+        }
+
+        .project-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            padding: 30px;
+
+            background-color: white;
+
+            border: 1px solid #e3d5f7;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(112, 65, 212, 0.15);
+
+            border-color: #b999ed;
+        }
+
+        .project-card h3 {
+            color: #38234e;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #756a81;
+            margin-bottom: 20px;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #7545d2;
+            font-weight: bold;
+        }
+
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eee4ff,
+                    #faf8ff
+                );
+        }
+
+        .contact p {
+            color: #756a81;
+            margin-bottom: 30px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px;
+
+            text-align: center;
+
+            background-color: #2d2140;
+
+            color: #ddd2eb;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 5%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <h2>Kavi Khare</h2>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Hi, I'm <span>Kavi Khare</span>
+            </h1>
+
+            <h3>
+                B.Tech CSE Student & Aspiring Full Stack Developer
+            </h3>
+
+            <p>
+                I enjoy solving problems, building web applications,
+                and learning new technologies. Currently focusing on
+                Data Structures & Algorithms and full stack development.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="#projects"
+                    class="btn primary-btn"
+                >
+                    View My Work
+                </a>
+
+                <a
+                    href="#contact"
+                    class="btn secondary-btn"
+                >
+                    Let's Connect
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-title">
+
+            <h2>
+                About <span>Me</span>
+            </h2>
+
+            <p>
+                A little about my journey
+            </p>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p>
+                I'm a second-year B.Tech Computer Science student
+                interested in software development, problem solving,
+                and building useful applications.
+            </p>
+
+            <p>
+                I'm currently strengthening my Data Structures and
+                Algorithms skills in C++ while learning full stack
+                development with JavaScript, React, Node.js and Express.
+            </p>
+
+            <p>
+                I believe in learning by building, experimenting,
+                and turning ideas into working projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>
+                My <span>Skills</span>
+            </h2>
+
+            <p>
+                Technologies I'm currently learning and working with
+            </p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>C++</h3>
+                <p>DSA & Problem Solving</p>
+            </div>
+
+            <div class="skill">
+                <h3>HTML & CSS</h3>
+                <p>Frontend Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Programming & Web</p>
+            </div>
+
+            <div class="skill">
+                <h3>React</h3>
+                <p>Frontend Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>Node.js</h3>
+                <p>Backend Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>Express</h3>
+                <p>Server & REST APIs</p>
+            </div>
+
+            <div class="skill">
+                <h3>Git</h3>
+                <p>Version Control</p>
+            </div>
+
+            <div class="skill">
+                <h3>GitHub</h3>
+                <p>Code & Collaboration</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-title">
+
+            <h2>
+                Featured <span>Projects</span>
+            </h2>
+
+            <p>
+                Some things I've worked on
+            </p>
+
+        </div>
+
+
+        <div class="project-container">
+
+
+            <div class="project-card">
+
+                <h3>Amazon Clone</h3>
+
+                <p>
+                    A responsive Amazon-inspired website built
+                    while learning modern frontend development.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>TaxEase</h3>
+
+                <p>
+                    A web-based tax consultancy project designed
+                    to provide a simple and user-friendly experience.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Product REST API</h3>
+
+                <p>
+                    A REST API built using Node.js and Express
+                    for managing product data.
+                </p>
+
+                <a href="#">
+                    View Project →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>
+                Let's <span>Connect</span>
+            </h2>
+
+            <p>
+                Have an opportunity, idea, or just want to talk tech?
+            </p>
+
+        </div>
+
+        <a
+            href="mailto:yourmail@example.com"
+            class="btn primary-btn"
+        >
+            Email Me
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Kavi Khare. All rights reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
