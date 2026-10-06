@@ -1,0 +1,592 @@
+/* =========================
+   CAMPUS HELP DESK - DARK UI
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #e8eaf0;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(108, 92, 231, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(0, 206, 201, 0.12), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(162, 89, 255, 0.10), transparent 35%),
+        #090b10;
+
+    padding: 50px 20px;
+    overflow-x: hidden;
+}
+
+
+/* Decorative glowing shapes */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    opacity: 0.45;
+}
+
+body::before {
+    width: 320px;
+    height: 320px;
+    background: #6c5ce7;
+    top: -80px;
+    left: -90px;
+}
+
+body::after {
+    width: 300px;
+    height: 300px;
+    background: #00cec9;
+    right: -100px;
+    bottom: -100px;
+}
+
+
+/* Main Wrapper */
+.container {
+    width: 900px;
+    max-width: 100%;
+    margin: auto;
+}
+
+
+/* Main Heading */
+h1 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #b7a7ff,
+        #72f1e8
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* Subtitle */
+.subtitle {
+    text-align: center;
+    color: #8c92a3;
+    margin-bottom: 42px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   FORM CARD
+   ========================= */
+
+form {
+    position: relative;
+
+    background: rgba(18, 21, 29, 0.82);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    overflow: hidden;
+}
+
+
+/* Top glowing line */
+form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 8%;
+    width: 84%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #6c5ce7,
+        #00cec9,
+        transparent
+    );
+}
+
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 19px;
+    margin-bottom: 8px;
+
+    color: #c9ccda;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* Inputs */
+input,
+select,
+textarea {
+    width: 100%;
+
+    background: #0d1017;
+
+    border: 1px solid #262a36;
+
+    color: #f4f4f6;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+    color: #575d6d;
+}
+
+
+/* Input Focus */
+input:focus,
+select:focus,
+textarea:focus {
+    background: #11151e;
+
+    border-color: #7c6cff;
+
+    box-shadow:
+        0 0 0 3px rgba(124, 108, 255, 0.14),
+        0 0 20px rgba(124, 108, 255, 0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* Textarea */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* Select */
+select {
+    cursor: pointer;
+}
+
+select option {
+    background: #11141c;
+    color: white;
+}
+
+
+/* =========================
+   MAIN BUTTON
+   ========================= */
+
+#submitButton {
+    width: 100%;
+
+    border: none;
+
+    margin-top: 28px;
+
+    padding: 15px;
+
+    border-radius: 13px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c5ce7,
+            #8e66ff,
+            #00a8a8
+        );
+
+    background-size: 200% 200%;
+
+    box-shadow:
+        0 10px 30px rgba(108, 92, 231, 0.28);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-position 0.4s ease;
+}
+
+#submitButton:hover {
+    transform: translateY(-3px);
+
+    background-position: 100% 50%;
+
+    box-shadow:
+        0 15px 35px rgba(108, 92, 231, 0.42);
+}
+
+#submitButton:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   REQUEST SECTION
+   ========================= */
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 22px;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    color: #f2f3f7;
+
+    position: relative;
+
+    padding-left: 15px;
+}
+
+
+/* Small glowing indicator */
+h2::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 7px;
+
+    width: 4px;
+    height: 24px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        #7c6cff,
+        #00cec9
+    );
+
+    box-shadow:
+        0 0 15px rgba(0, 206, 201, 0.45);
+}
+
+
+/* =========================
+   REQUEST CARDS
+   ========================= */
+
+.request-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(21, 24, 34, 0.94),
+            rgba(13, 16, 24, 0.96)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.28);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Unique side glow */
+.request-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 12%;
+
+    width: 3px;
+    height: 76%;
+
+    border-radius: 5px;
+
+    background: linear-gradient(
+        #7c6cff,
+        #00cec9
+    );
+
+    box-shadow:
+        0 0 14px rgba(124, 108, 255, 0.55);
+}
+
+
+/* Hover Effect */
+.request-card:hover {
+    transform: translateY(-6px) scale(1.005);
+
+    border-color: rgba(124, 108, 255, 0.34);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.42),
+        0 0 30px rgba(108, 92, 231, 0.06);
+}
+
+
+/* Request Heading */
+.request-card h3 {
+    color: #a99dff;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Request Text */
+.request-card p {
+    color: #9ba0b1;
+
+    margin: 8px 0;
+
+    line-height: 1.65;
+
+    font-size: 14px;
+}
+
+.request-card strong {
+    color: #e5e7ef;
+    font-weight: 600;
+}
+
+
+/* =========================
+   EDIT / DELETE BUTTONS
+   ========================= */
+
+.edit-btn,
+.delete-btn {
+    margin-top: 16px;
+
+    padding: 9px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+
+/* Edit */
+.edit-btn {
+    background: rgba(0, 206, 201, 0.10);
+
+    color: #65e8df;
+
+    border: 1px solid rgba(0, 206, 201, 0.30);
+
+    margin-right: 8px;
+}
+
+.edit-btn:hover {
+    color: #081312;
+
+    background: #55e5db;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 206, 201, 0.20);
+}
+
+
+/* Delete */
+.delete-btn {
+    background: rgba(255, 71, 87, 0.09);
+
+    color: #ff7583;
+
+    border: 1px solid rgba(255, 71, 87, 0.30);
+}
+
+.delete-btn:hover {
+    color: white;
+
+    background: #ff4757;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(255, 71, 87, 0.20);
+}
+
+
+/* =========================
+   EMPTY REQUEST MESSAGE
+   ========================= */
+
+.no-requests {
+    text-align: center;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    color: #6f7587;
+
+    background: rgba(17, 20, 28, 0.85);
+
+    border: 1px dashed #303543;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090b10;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        #6c5ce7,
+        #00a8a8
+    );
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   TEXT SELECTION
+   ========================= */
+
+::selection {
+    background: #6c5ce7;
+    color: white;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 30px 14px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    form {
+        padding: 24px 20px;
+        border-radius: 18px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .request-card {
+        padding: 20px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        width: 100%;
+    }
+
+    .edit-btn {
+        margin-right: 0;
+    }
+
+    .delete-btn {
+        margin-top: 9px;
+    }
+}
